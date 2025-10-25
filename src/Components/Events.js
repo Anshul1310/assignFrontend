@@ -74,7 +74,7 @@ const dataToSend = {
     <p>Find exciting events happening near you</p>
   </div>
   <div className="search-section">
-    <form className="search-form" onSubmit={(e)=>{e.preventDefault()}}>
+    <form  className="search-form" onSubmit={(e)=>{e.preventDefault()}}>
       {/* <input
         type="text"
         className="search-input"
@@ -97,15 +97,15 @@ const dataToSend = {
           type="number"
           className="number-input"
           id="customDistance"
+          name="ds"
           placeholder="km"
           value={custom}
           onChange={(item)=>setCustom(item.target.value)}
-          min={1}
-          max={100}
+        
           style={distance!="custom"? { display: "none" }: {display:"block"}}
         />
       </div>
-      <button onClick={search} className="search-btn" onclick="searchEvents()">
+      <button onClick={search} className="search-btn">
         Search
       </button>
     </form>
@@ -114,8 +114,8 @@ const dataToSend = {
     <h2 className="events-header">Upcoming Events</h2>
     <div className="events-list" id="eventsList">
       {
-        events.map((item)=>{
-          return <div className="event-card">
+        events.map((item, index)=>{
+          return <div key={index} className="event-card">
         <img
           src={item.image}
           alt="Music Festival"
