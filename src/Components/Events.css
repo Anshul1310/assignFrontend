@@ -1,0 +1,262 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0F0F0F;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1a1a2e;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid #2d2d44;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        .search-section {
+            padding: 30px;
+            background: #16162a;
+            border-bottom: 1px solid #2d2d44;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 20px;
+            border: 2px solid #2d2d44;
+            border-radius: 10px;
+            font-size: 16px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-input::placeholder {
+            color: #6b6b8a;
+        }
+
+        .distance-filter {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .dropdown {
+            padding: 12px 15px;
+            border: 2px solid #2d2d44;
+            border-radius: 10px;
+            font-size: 16px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .dropdown:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .number-input {
+            width: 80px;
+            padding: 12px 15px;
+            border: 2px solid #2d2d44;
+            border-radius: 10px;
+            font-size: 16px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            transition: border-color 0.3s;
+        }
+
+        .number-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .search-btn:active {
+            transform: translateY(0);
+        }
+
+        .events-section {
+            padding: 30px;
+        }
+
+        .events-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        .events-list {
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .events-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .events-list::-webkit-scrollbar-track {
+            background: #16162a;
+            border-radius: 10px;
+        }
+
+        .events-list::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .events-list::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+
+        .event-card {
+            background: #16162a;
+            border: 2px solid #2d2d44;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            cursor: pointer;
+            display: flex;
+            gap: 20px;
+        }
+
+        .event-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .event-image {
+            width: 200px;
+            height: 180px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .event-content {
+            padding: 20px;
+            padding-left: 0;
+            flex: 1;
+        }
+
+        .event-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #e0e0e0;
+            margin-bottom: 8px;
+        }
+
+        .event-date {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .event-location {
+            color: #9999b3;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .event-description {
+            color: #7a7a94;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .event-distance {
+            display: inline-block;
+            background: #2d2d44;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #9999b3;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .search-form {
+                flex-direction: column;
+            }
+
+            .search-input {
+                min-width: 100%;
+            }
+
+            .distance-filter {
+                width: 100%;
+            }
+
+            .search-btn {
+                width: 100%;
+            }
+
+            .event-card {
+                flex-direction: column;
+            }
+
+            .event-image {
+                width: 100%;
+                height: 200px;
+            }
+
+            .event-content {
+                padding: 20px;
+            }
+        }
