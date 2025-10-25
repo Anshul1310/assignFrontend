@@ -1,8 +1,7 @@
 import React from 'react'
 import Navbar from './Components/Navbar'
 import Events from './Components/Events'
-import { Routes, Route, Link } from 'react-router-dom';
-import HeroSection from './Components/HeroSection2/HeroSection'
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (

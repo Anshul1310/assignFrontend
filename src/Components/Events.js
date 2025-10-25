@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import "./Events.css"
 import { useLocation } from './useLocation'
 import axios from 'axios';
 import { useEffect } from 'react'
-import { Search } from 'lucide-react'
 import { format, parseISO } from 'date-fns';
 
 const Events =()=>{
@@ -14,7 +13,7 @@ const formattedDate = format(dateObject, 'EEEE, MMMM d, yyyy');
 return formattedDate;
 }
 
-  const { loading, error, data } = useLocation();
+  const { data } = useLocation();
   const [distance, setDistance]=useState("10000");
   const [custom, setCustom]=useState("0");
   const [events,setEvents]=useState([]);
@@ -33,7 +32,7 @@ return formattedDate;
  
   const search=()=>{
     
-      if(distance=="custom"){
+      if(distance==="custom"){
         
           if(custom=="0"){
               alert("Enetered value must be greater than 0")
