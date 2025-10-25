@@ -1,6 +1,8 @@
 import "./Navbar.css";
 import video from "./video.mp4";
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 import HeroSection from "./HeroSection2/HeroSection";
 
 const Navbar = () => {
@@ -14,7 +16,7 @@ const Navbar = () => {
       <div className="navigation">
         <div className="navigation-items">
           <a href="#">Home</a>
-          <a href="/events">Events</a>
+          <Link to="/events">Events</Link>
           <a href="#">About</a>
           <a href="#">Contact</a>
           <a href="#">Blog</a>

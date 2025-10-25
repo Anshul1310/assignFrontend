@@ -7,7 +7,7 @@ const App = () => {
   return (
    <Routes>
         <Route path="/" element={<Navbar />} /> {/* Route for the home page */}
-        <Route path="/events" element={<Events />} /> {/* Route for the about page */}
+        <Route path="/events" element={<Events />} /> 
         <Route path="*" element={<Navbar />} /> {/* Catch-all route for 404 */}
       </Routes>
     
