@@ -6,8 +6,8 @@ const Footer = () => {
         <footer>
             <div className="footer-content">
                 <div className="footer-section">
-                    <h3>BrandName</h3>
-                    <p>Transform your ideas into reality with our innovative solutions. Building the future, one project at a time.</p>
+                    <h3>INDULGE OUT</h3>
+                    <p>Whether you're looking to find your tribe or build one, Indulge Out is your go-to platform for turning passions into communities, and communities into unforgettable experiences.</p>
                     <div className="social-links">
                         <a href="#" aria-label="Facebook">📘</a>
                         <a href="#" aria-label="Twitter">🐦</a>
@@ -27,18 +27,18 @@ const Footer = () => {
                 <div className="footer-section">
                     <h3>Services</h3>
                     <ul className="footer-links">
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">App Development</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                        <li><a href="#">Consulting</a></li>
+                        <li><a href="#">Event Management</a></li>
+                        <li><a href="#">Show Management</a></li>
+                        <li><a href="#">Interests</a></li>
+                        <li><a href="#">Find your Interest</a></li>
                     </ul>
                 </div>
                 <div className="footer-section">
                     <h3>Contact Us</h3>
                     <ul className="footer-links">
                         <li>📧 info@brandname.com</li>
-                        <li>📞 +1 (555) 123-4567</li>
-                        <li>📍 123 Street, City, Country</li>
+                        <li>📞 +1 1234 567 789</li>
+                        <li>📍 Banglore, Karnataka, India</li>
                     </ul>
                 </div>
             </div>

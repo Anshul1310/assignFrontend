@@ -10,18 +10,18 @@ const Download = () => {
                     <p>Get access to all our features on the go. Available now on iOS and Android platforms.</p>
                     
                     <div className="download-buttons">
-                        <a href="#" className="store-btn">
-                            <div className="store-icon">🍎</div>
+                        <a href="https://play.google.com/store/apps/details?id=com.anantexperiences.indulgeout&pcampaignid=web_share" className="store-btn">
+                            <div className="store-icon"><img height="30px" src="https://cdn0.iconfinder.com/data/icons/shift-logotypes/32/Google_Play-1024.png" /></div>
                             <div className="store-text">
                                 <small>Download on the</small>
-                                <span>App Store</span>
+                                <span>Google Play</span>
                             </div>
                         </a>
-                        <a href="#" className="store-btn">
-                            <div className="store-icon">📱</div>
+                        <a href="https://play.google.com/store/apps/details?id=com.anantexperiences.indulgeout&pcampaignid=web_share" className="store-btn">
+                            <div className="store-icon"><img src="https://1000logos.net/wp-content/uploads/2020/08/App-Store-Logo-768x480.png" height="30px"/></div>
                             <div className="store-text">
                                 <small>Get it on</small>
-                                <span>Google Play</span>
+                                <span>App Store</span>
                             </div>
                         </a>
                     </div>
@@ -33,7 +33,7 @@ const Download = () => {
                         </div>
                         <div className="feature-item">
                             <span>📥</span>
-                            <div>500K+ Downloads</div>
+                            <div>100+ Downloads</div>
                         </div>
                         <div className="feature-item">
                             <span>🎯</span>
@@ -43,7 +43,7 @@ const Download = () => {
                 </div>
 
                 <div className="download-image">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="Mobile App" className="phone-mockup" />
+                    <img src="https://res.cloudinary.com/dbxtgjwyv/image/upload/v1761488761/Screenshot_2025-10-26_195540_adeuut.png" alt="Mobile App" className="phone-mockup" />
                 </div>
             </div>
         </section>

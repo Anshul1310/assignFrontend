@@ -37,12 +37,14 @@ const Navbar = () => {
     return (
         <nav className={isHidden ? 'hidden' : ''}>
             <div className="nav-container">
-                <div className="logo">BrandName</div>
+                <div className="logo">INDULGEOUT</div>
                 <ul className={isMenuOpen ? "nav-links active" : "nav-links"}>
                     <li><a href="#home" onClick={closeMenu}>Home</a></li>
                     <li><a href="#features" onClick={closeMenu}>Features</a></li>
-                    <li><a href="#about" onClick={closeMenu}>About</a></li>
-                    <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+                    <li><a href="#about" onClick={closeMenu}>Gallery</a></li>
+                    <li><a href="#contact" onClick={closeMenu}>FAQ</a></li>
+                    <li><a href="#contact" onClick={closeMenu}>Downloadds</a></li>
+                    <li><a href="/events" onClick={closeMenu}>Events</a></li>
                 </ul>
                 <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <span></span>

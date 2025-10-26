@@ -3,27 +3,27 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const slidesData = [
     {
-        img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80",
+        img: "https://res.cloudinary.com/dbxtgjwyv/image/upload/v1761488340/Screenshot_2025-10-26_194502_tlk5a6.png",
         alt: "Technology",
-        title: "Innovative Technology",
+        title: "Find your Interest",
         desc: "Building the future with cutting-edge solutions"
     },
     {
-        img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
+        img: "https://res.cloudinary.com/dbxtgjwyv/image/upload/v1761488359/Screenshot_2025-10-26_194440_kon1lk.png",
         alt: "Team Collaboration",
-        title: "Team Collaboration",
+        title: "Curate Experiences",
         desc: "Working together to achieve greatness"
     },
     {
-        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+        img: "https://res.cloudinary.com/dbxtgjwyv/image/upload/v1761488327/Screenshot_2025-10-26_194417_fhhfjh.png",
         alt: "Data Analytics",
-        title: "Data-Driven Insights",
+        title: "Find your Interest",
         desc: "Making informed decisions with powerful analytics"
     },
     {
-        img: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80",
+        img: "https://res.cloudinary.com/dbxtgjwyv/image/upload/v1761488246/Screenshot_2025-10-26_194529_hywlmx.png",
         alt: "Creative Design",
-        title: "Creative Design",
+        title: "Find your Interest",
         desc: "Beautiful interfaces that users love"
     }
 ];
