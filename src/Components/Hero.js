@@ -12,7 +12,7 @@ const Hero = () => {
           
         </video>
             <div className="hero-content">
-                <h1>Can you INDULGE OUT</h1>
+                <h1>INDULGE OUT !!!</h1>
                 <p>In a world flooded with digital noise, IndulgeOut is your invitation to rediscover real-world connections.</p>
                 <div className="cta-buttons">
                     <button className="btn btn-primary">Get Started</button>
