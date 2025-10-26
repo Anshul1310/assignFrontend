@@ -1,100 +1,57 @@
-import "./Navbar.css";
-import video from "./video.mp4";
-import React from 'react'
-import { Link } from 'react-router-dom';
-
-import HeroSection from "./HeroSection2/HeroSection";
+// src/components/Navbar.js
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
-  return (
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
+    const [lastScrollTop, setLastScrollTop] = useState(0);
+    const scrollThreshold = 100;
 
-    <>
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  <div className="body">
-    <header>
-      <img id="imageLogo" src="https://res.cloudinary.com/dbxtgjwyv/image/upload/v1761402377/logo4_irjrkn.png" alt="logo"/>
-      <div className="navigation">
-        <div className="navigation-items">
-          <a href="#">Home</a>
-          <Link to="/events">Events</Link>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-          <a href="#">Blog</a>
-          <a href="#">Team</a>
-          
-        </div>
-      </div>
-    </header>
+            if (scrollTop > scrollThreshold) {
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    setIsHidden(true);
+                } else {
+                    // Scrolling up
+                    setIsHidden(false);
+                }
+            } else {
+                // At the top
+                setIsHidden(false);
+            }
+            setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop); // For Mobile or negative scrolling
+        };
 
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [lastScrollTop]);
 
-    <div className="home">
-      <div className="content">
-       
-       
+    const closeMenu = () => setIsMenuOpen(false);
 
-         <video autoPlay loop muted>
-          <source src={video} type="video/mp4"></source>
-        </video>
-         <div className="bg">
-           
-        </div>
-        
-        <h1>FIND <span>INTEREST</span></h1>
-        <p>Generate Lorem Ipsum placeholder text for usegging tools. Explore the origins, history and meaning of the famous passage, and learn how Lorem Ipsum went from Generate Lorem Ipsum placeholder text for use in your graphic, print and web layouts, and discover plugins for your favorite writing, design and blogging tools. Explore the origins, history and meaning of the famous passage, and learn how Lorem Ipsum went from</p>
-        
-      </div>
-    </div>
+    return (
+        <nav className={isHidden ? 'hidden' : ''}>
+            <div className="nav-container">
+                <div className="logo">BrandName</div>
+                <ul className={isMenuOpen ? "nav-links active" : "nav-links"}>
+                    <li><a href="#home" onClick={closeMenu}>Home</a></li>
+                    <li><a href="#features" onClick={closeMenu}>Features</a></li>
+                    <li><a href="#about" onClick={closeMenu}>About</a></li>
+                    <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+                </ul>
+                <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    );
+};
 
-    <HeroSection/>
-    {/* <div className="hero-section">
-      <h2>What We Offer</h2>
-      <p>Generate Lorem Ipsum placeholder text for usegging tools. Explore the origins, history and meaning of the famous passage, and learn how Lorem Ipsum went from Generate Lorem Ipsum placeholder text for use in your grap</p>
-      <div className="hobby">
-        
-          <div className="image">
-            <img src="https://imgs.search.brave.com/qtGUeI6nlGllqggCEYHq2yQfLaXquaIWktPfhHKqYWU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy93b21hbi13aXRo/LXN1bi1nbGFzc2Vz/LWluLWZsb3dlci1m/aWVsZC1zdW1tZXIt/ZnJlZS1waG90by5q/cGc_dz02MDAmcXVh/bGl0eT04MA"/>
-          </div>
-          <div className="hobby-right">
-            <h3>Choose your hobby</h3>
-            <p>From hiking, boardgaming, cricket, dance and much more. From hiking, boardgaming, cricket, dance and much more. There is something for everyone</p>
-          </div>
-
-        
-      </div>
-    
-    
-    </div> */}
-
-
-
-    
-
-    
-
-{/* <div className="outermodal">
- <div className="modal">
-  <h3>
-    Finding Events
-  </h3>
-
-    </div>
-</div>
-    */}
-
-
-
-        
-    </div>
-
-    
-
-    </>
-
-  
-    
-
-    
-  )
-}
-
-export default Navbar
+export default Navbar;
