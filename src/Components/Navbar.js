@@ -7,7 +7,15 @@ const Navbar = () => {
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const scrollThreshold = 100;
 
+    const [isLoggedIn,setIsLoggedIn]=useState(false);
+
     useEffect(() => {
+
+        if(localStorage.getItem("email")==null){
+            setIsLoggedIn(false);
+        }else{
+            setIsLoggedIn(true);
+        }
         const handleScroll = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -44,7 +52,13 @@ const Navbar = () => {
                     <li><a href="#about" onClick={closeMenu}>Gallery</a></li>
                     <li><a href="#contact" onClick={closeMenu}>FAQ</a></li>
                     <li><a href="#contact" onClick={closeMenu}>Downloadds</a></li>
+                    <li><a href="/add" onClick={closeMenu}>Add Event</a></li>
                     <li><a href="/events" onClick={closeMenu}>Events</a></li>
+                    {
+                        isLoggedIn? <li><a href="#" onClick={()=>{
+                            localStorage.removeItem("email");
+                        }}>LOGOUT</a></li> : <li><a href="/login" onClick={closeMenu}>LOGIN</a></li> 
+                    }
                 </ul>
                 <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <span></span>
