@@ -5,7 +5,8 @@ import { useState } from "react";
 import axios from "axios";
 import LoadingSpinner from "./LoadingSpinner"; // Adjust path if needed
 import { v4 as uuidv4 } from "uuid";
-import { initializeApp } from "firebase/app";
+import { auth, db } from './firebase'; // Import from your firebase.js
+
 import {
   getDatabase,
   ref,
@@ -13,18 +14,7 @@ import {
   serverTimestamp,
   push,
 } from "firebase/database";
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "https://indulge-93dc5-default-rtdb.firebaseio.com", // <-- Make sure this is your Realtime Database URL
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
-};
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
 
 function AddEventForm() {
   const [latitude, setLatitude] = useState("");

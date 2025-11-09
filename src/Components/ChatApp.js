@@ -3,8 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./ChatApp.module.css";
 import LoadingSpinner from "./LoadingSpinner";
+import { auth, db } from './firebase'; // Import from your firebase.js
 
-import { initializeApp } from "firebase/app";
 import {
   getDatabase,
   ref,
@@ -15,18 +15,19 @@ import {
 
 // --- 1. Firebase Configuration (Replace with your own) ---
 // Note: In a real app, you'd initialize this in a separate firebase.js file
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "https://indulge-93dc5-default-rtdb.firebaseio.com", // <-- Make sure this is your Realtime Database URL
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBNcvdM8ckE4gCxbxduxZFbDlmRWx3G13M",
+//   authDomain: "indulge-93dc5.firebaseapp.com",
+//   databaseURL: "https://indulge-93dc5-default-rtdb.firebaseio.com",
+//   projectId: "indulge-93dc5",
+//   storageBucket: "indulge-93dc5.firebasestorage.app",
+//   messagingSenderId: "30146789957",
+//   appId: "1:30146789957:web:d18756e2152a4f16e9192c",
+//   measurementId: "G-15VPVN54Z2"
+// };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+// const app = initializeApp(firebaseConfig);
+// const db = getDatabase(app);
 // Initial demo messages
 
 function ChatApp() {

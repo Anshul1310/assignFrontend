@@ -5,7 +5,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { format, parseISO } from "date-fns";
 import LoadingSpinner from "./LoadingSpinner";
-import { initializeApp } from "firebase/app";
+import { auth, db } from './firebase'; // Import from your firebase.js
 
 import {
   getDatabase,
@@ -17,31 +17,13 @@ import {
 
 // --- 1. Firebase Configuration (Replace with your own) ---
 // Note: In a real app, you'd initialize this in a separate firebase.js file
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "https://indulge-93dc5-default-rtdb.firebaseio.com", // <-- Make sure this is your Realtime Database URL
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
-};
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+
 
 const Events = () => {
   // Attach an asynchronous callback to read the data at our posts reference
 
-  const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    databaseURL: "https://indulge-93dc5-default-rtdb.firebaseio.com", // <-- Make sure this is your Realtime Database URL
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID",
-  };
+
 
   const { data } = useLocation();
   const [distance, setDistance] = useState("10000");
